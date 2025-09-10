@@ -28,7 +28,6 @@ logs/
 *.gz
 
 # Config secrets
-user_data/config.json
 user_data/config_private.json
 user_data/config_binance.json
 user_data/config_test.json
