@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: freqtrade-web
+    env: docker
+    plan: starter
+    autoDeploy: true
+    dockerfilePath: ./Dockerfile
+
+    disk:
+      name: ft-data
+      mountPath: /freqtrade/user_data
+      sizeGB: 2
+
+    envVars:
+      - key: BNB_API_KEY
+        sync: false
+      - key: BNB_API_SECRET
+        sync: false
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT
+        sync: false
+      - key: API_JWT_SECRET
+        sync: false
+      - key: API_WS_TOKEN
+        sync: false
+      - key: API_USER
+        sync: false
+      - key: API_PASS
+        sync: false
+      - key: TZ
+        value: Asia/Bangkok
+
+    healthCheckPath: /api/v1/ping
+
+    startCommand: "trade --logfile /freqtrade/user_data/logs/freqtrade.log --db-url sqlite:////freqtrade/user_data/tradesv3.sqlite --config /freqtrade/user_data/config.json --strategy LongZigZagStrategyOptimize --rest-api --rest-host 0.0.0.0 --rest-port 8080"
