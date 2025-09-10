@@ -1,0 +1,45 @@
+# Python cache / virtual env
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.env
+.venv/
+venv/
+env/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Freqtrade data
+user_data/data/
+user_data/backtest_results/
+user_data/hyperopt_results/
+user_data/plot/
+
+# SQLite databases
+*.sqlite
+*.db
+
+# Logs
+*.log
+logs/
+*.gz
+
+# Config secrets
+user_data/config.json
+user_data/config_private.json
+user_data/config_binance.json
+user_data/config_test.json
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Docker artifacts
+*.pid
+*.sock
+*.tar
