@@ -9,4 +9,4 @@ RUN mkdir -p /freqtrade/user_data/logs /freqtrade/user_data/plot /freqtrade/user
 EXPOSE 8080
 ENV TZ=Asia/Bangkok
 
-CMD ["trade","--config","/freqtrade/user_data/config.json","--logfile","/freqtrade/user_data/logs/freqtrade.log","--db-url","sqlite:////freqtrade/user_data/tradesv3.sqlite","--strategy","LongZigZagStrategyOptimize","--rest-api","--rest-host","0.0.0.0","--rest-port","8080"]
+CMD ["trade","--config","/freqtrade/user_data/config.json","--logfile","/freqtrade/user_data/logs/freqtrade.log","--db-url","sqlite:////freqtrade/user_data/tradesv3.sqlite","--strategy","LongZigZagStrategyOptimize"]
